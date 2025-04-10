@@ -37,6 +37,7 @@ Alternatively you can run it as:
 
 - Search bookmarks
 - Create bookmarks
+- Get all collections
 
 ## License
 

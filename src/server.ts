@@ -72,6 +72,27 @@ server.tool(
     }
   }
 )
+
+server.tool(
+  "get_collections",
+  "Get collections from Raindrop.io",
+  {},
+  async () => {
+    try {
+      const res = await raindrop.getCollections()
+      return {
+        content: [
+          {
+            type: "text",
+            text: dump(res),
+          },
+        ],
+      }
+    } catch (error) {
+      return errorToToolResult(error)
+    }
+  }
+)
 const port = Number(process.env.PORT || "3000")
 
 export async function startServer(

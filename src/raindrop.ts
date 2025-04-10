@@ -72,4 +72,18 @@ export class Raindrop {
 
     return json
   }
+
+  async getCollections() {
+    const request = this.got.get("collections")
+
+    const [res, json] = await Promise.all([request, request.json()])
+
+    if (!res.ok) {
+      throw new Error(
+        `Failed to get collections: ${res.statusCode}\n${res.body}`
+      )
+    }
+
+    return json
+  }
 }
