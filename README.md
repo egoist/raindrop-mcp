@@ -34,6 +34,7 @@ Alternatively you can run it as:
 ## Capabilities
 
 - Search bookmarks
+- Create bookmarks
 
 ## License
 
