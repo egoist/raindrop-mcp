@@ -2,7 +2,7 @@
   "name": "raindrop-mcp",
   "description": "An MCP server for Raindrop.io by ChatWise",
   "type": "module",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "bin": "./cli.js",
   "files": [
     "dist",
