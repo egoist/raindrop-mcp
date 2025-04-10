@@ -6,6 +6,12 @@ export const SearchBookmarksSchema = {
   page: z.number().default(0).describe("The page number"),
   perpage: z.number().default(50).describe("The number of bookmarks per page"),
   sort: z.enum(["-created", "created"]).optional().describe(`Sort bookmarks`),
+  collection_id: z
+    .number()
+    .default(0)
+    .describe(
+      `The collection ID to filter bookmarks, 0 for all, -1 for unsorted, -99 for trash, others for specific collection`
+    ),
 }
 
 type SearchBookmarksOptions = z.infer<z.ZodObject<typeof SearchBookmarksSchema>>
@@ -34,8 +40,8 @@ export class Raindrop {
     })
   }
 
-  async searchBookmarks(options: SearchBookmarksOptions) {
-    const request = this.got.get(`raindrops/0`, {
+  async searchBookmarks({ collection_id, ...options }: SearchBookmarksOptions) {
+    const request = this.got.get(`raindrops/${collection_id}`, {
       searchParams: options,
     })
     const [res, json] = await Promise.all([request, request.json()])
