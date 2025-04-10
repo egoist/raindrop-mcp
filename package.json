@@ -1,0 +1,30 @@
+{
+  "name": "raindrop-mcp",
+  "description": "An MCP server for Raindrop.io by ChatWise",
+  "type": "module",
+  "version": "0.0.1",
+  "bin": "./cli.js",
+  "files": [
+    "dist",
+    "/cli.js"
+  ],
+  "scripts": {
+    "build": "bun build src/index.ts --packages external --outdir dist --target node",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/js-yaml": "^4.0.9",
+    "@types/polka": "^0.5.7",
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "@chatmcp/sdk": "^1.0.5",
+    "@modelcontextprotocol/sdk": "^1.9.0",
+    "cac": "^6.7.14",
+    "got": "^14.4.7",
+    "js-yaml": "^4.1.0",
+    "polka": "^0.5.2",
+    "zod": "^3.24.2"
+  }
+}
