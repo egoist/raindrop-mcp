@@ -2,6 +2,8 @@
 
 An MCP server for [Raindrop.io](https://raindrop.io).
 
+This project is sponsored by [ChatWise](https://chatwise.app), an all-in-one LLM chatbot with first-class MCP support.
+
 ## Usage
 
 Create an access token on [Raindrop.io](https://app.raindrop.io/settings/integrations):
